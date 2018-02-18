@@ -4,12 +4,13 @@ services:
   concord:
     build: .
     container_name: concord
+    image: concord:latest
     restart: unless-stopped
   nginx:
     container_name: nginx
     depends_on:
       - concord
-    image: nginx
+    image: nginx:latest
     ports:
       - "80:80"
       - "443:443"

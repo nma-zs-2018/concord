@@ -25,8 +25,7 @@ SECRET_KEY = 'vpps+gr)^01$epv2w5$rfc-s3+3syo4d02@b@$z7da)2y+-$m%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['159.89.25.201', '46.101.146.242']
-
+ALLOWED_HOSTS = ['concord.pw']
 
 # Application definition
 
