@@ -125,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'concord.ConcordUser'
+AUTH_USER_MODEL = 'concord.User'
 
 # Django hosts
 ROOT_HOSTCONF = 'server.hosts'

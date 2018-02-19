@@ -1,20 +1,22 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-class ConcordUser(AbstractUser):
-    public_key = models.TextField()
+class User(AbstractUser):
+    salt = models.TextField()
+    key_public = models.TextField()
+    key_private_crypted = models.TextField()
 
-class ChatGroup(models.Model):
+class Group(models.Model):
     def __str__(self):
-        return self.groupName
+        return self.group_name
 
-    groupName = models.TextField()
+    group_name = models.TextField()
 
-class ChatCryptoInfo(models.Model):
+class UserGroupInfo(models.Model):
     def __str__(self):
-        return str(self.chatGroup)
+        return str(self.group)
 
-    chatGroup = models.ForeignKey(ChatGroup, on_delete=models.CASCADE)
-    concordUser = models.ForeignKey(ConcordUser, on_delete=models.CASCADE)
-    encrypted_symetric_key = models.TextField()
+    group = models.ForeignKey(Group, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    key_symmetric_crypted = models.TextField()
 
