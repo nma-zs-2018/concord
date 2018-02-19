@@ -25,11 +25,12 @@ SECRET_KEY = 'vpps+gr)^01$epv2w5$rfc-s3+3syo4d02@b@$z7da)2y+-$m%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['concord.pw']
+ALLOWED_HOSTS = ['www.concord.pw', 'api.concord.pw']
 
 # Application definition
 
 INSTALLED_APPS = [
+    'django_hosts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +41,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django_hosts.middleware.HostsRequestMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -47,9 +50,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'django_hosts.middleware.HostsResponseMiddleware',
 ]
 
-ROOT_URLCONF = 'server.urls'
+ROOT_URLCONF = 'server.www_urls'
 
 TEMPLATES = [
     {
@@ -121,3 +126,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'concord.ConcordUser'
+
+# Django hosts
+ROOT_HOSTCONF = 'server.hosts'
+DEFAULT_HOST = 'www'
