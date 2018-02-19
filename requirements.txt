@@ -1,1 +1,2 @@
 Django==2.0.2
+channels==2.0.2

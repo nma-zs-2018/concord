@@ -18,7 +18,10 @@ from django.urls import path
 
 from concord.views import index
 
+from src.concord.views import chat
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index)
+    path('', index),
+    path('chat/', chat)
 ]
