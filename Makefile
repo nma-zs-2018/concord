@@ -1,6 +1,7 @@
 .PHONY: all
 all: pull build migrate run
 
+all_local: pull build_local migrate run
 
 # Pulls git
 pull:

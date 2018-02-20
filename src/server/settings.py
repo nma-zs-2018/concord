@@ -23,9 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vpps+gr)^01$epv2w5$rfc-s3+3syo4d02@b@$z7da)2y+-$m%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+DEBUG = False
 ALLOWED_HOSTS = ['www.concord.pw', 'api.concord.pw']
+
+if "DEBUG" in os.environ:
+	DEBUG = True
+	ALLOWED_HOSTS = ['*']
 
 # Application definition
 

@@ -4,6 +4,8 @@ services:
   concord:
     build: .
     container_name: concord
+    environment:
+      - DEBUG
     image: concord:latest
     ports:
       - "8000:8000"
