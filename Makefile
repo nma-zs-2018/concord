@@ -12,6 +12,9 @@ pull:
 build:
 	docker-compose build
 
+build_local:
+	docker-compose -f docker-compose_local.yml build
+
 # Start a new web container to run migrations
 # Use --rm to remove the container when the command completes
 migrate:

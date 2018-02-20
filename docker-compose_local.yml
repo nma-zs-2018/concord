@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  concord:
+    build: .
+    container_name: concord
+    image: concord:latest
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
