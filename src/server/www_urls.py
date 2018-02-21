@@ -15,13 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
-from concord.views import index
-
-from src.concord.views import chat
+from concord import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
-    path('chat/', chat)
+    path('login/', views.login),
+    path('login_auth', views.login_auth),
+    path('', views.index)
 ]
