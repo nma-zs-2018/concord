@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+        var ws = WebSocket("ws://127.0.0.1:8000");
+
+        ws.onmessage = function(evt){
+            document.getElementById("test").innerText = evt.data();
+        }
+    </script>
 </head>
 <body>
-    <h1>Hi there.</h1>
-    <img src="https://vignette.wikia.nocookie.net/pripara/images/a/ae/Salami-smile.jpg">
+    <h1 id="test">Hi there.</h1>
 </body>
 </html>

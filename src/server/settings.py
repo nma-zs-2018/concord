@@ -25,7 +25,7 @@ SECRET_KEY = 'vpps+gr)^01$epv2w5$rfc-s3+3syo4d02@b@$z7da)2y+-$m%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['concord.pw']
+ALLOWED_HOSTS = ['concord.pw', '127.0.0.1']
 
 # Application definition
 
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'concord.apps.ConcordConfig',
-    'channels'
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -69,8 +69,8 @@ TEMPLATES = [
     },
 ]
 
+ASGI_APPLICATION = 'concord.routing.application'
 WSGI_APPLICATION = 'server.wsgi.application'
-#ASGI_APPLICATION = 'concord.routing.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
