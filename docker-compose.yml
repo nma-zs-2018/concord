@@ -6,6 +6,8 @@ services:
     container_name: concord
     image: concord:latest
     restart: unless-stopped
+    volumes:
+      - ${PWD}/src:/concord
   nginx:
     container_name: nginx
     depends_on:
